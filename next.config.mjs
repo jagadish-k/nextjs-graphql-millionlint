@@ -1,3 +1,4 @@
+import MillionLint from '@million/lint';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,10 +6,9 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.(graphql|gql)$/,
       exclude: /node_modules/,
-      loader: 'graphql-tag/loader',
+      loader: 'graphql-tag/loader'
     });
     return config;
-  },
+  }
 };
-
-export default nextConfig;
+export default MillionLint.next()(nextConfig);
